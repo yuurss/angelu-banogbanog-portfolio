@@ -24,7 +24,7 @@ const Hero = () => {
 
       {/* Resume-style tagline */}
       <p className="text-base sm:text-lg md:text-xl mb-4 text-center font-medium">
-        Aspiring Web Developer | React & TailwindCSS Enthusiast
+        Full-Stack Developer
       </p>
 
       {/* Short description */}
@@ -34,12 +34,6 @@ const Hero = () => {
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <a
-          href="#projects"
-          className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-gray-100 transition"
-        >
-          View My Work
-        </a>
         <a
           href="/resume.pdf" // 👈 Make sure your resume file is placed in the 'public' folder
           download="Angelu_Banogbanog_Resume.pdf"

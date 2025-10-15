@@ -1,33 +1,62 @@
 import React from "react";
-
-const skills = [
-  { name: "HTML", level: 90 },
-  { name: "CSS", level: 85 },
-  { name: "JavaScript", level: 80 },
-  { name: "React", level: 85 },
-  { name: "TailwindCSS", level: 80 },
-  { name: "Node.js", level: 70 },
-];
+import {
+  FaReact,
+  FaNodeJs,
+  FaPhp,
+  FaJava,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiJavascript,
+  SiTypescript,
+  SiMysql,
+  SiExpress,
+  SiGithub,
+  SiVite,
+} from "react-icons/si";
 
 const Skills = () => {
+  const skills = [
+    { name: "React", icon: <FaReact className="text-sky-500" /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
+    { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+    { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+    { name: "Express.js", icon: <SiExpress className="text-gray-500" /> },
+    { name: "PHP", icon: <FaPhp className="text-indigo-500" /> },
+    { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
+    { name: "Java", icon: <FaJava className="text-red-500" /> },
+    { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+    { name: "CSS", icon: <FaCss3Alt className="text-blue-400" /> },
+    { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
+    { name: "GitHub", icon: <SiGithub className="text-black" /> },
+    { name: "Vite", icon: <SiVite className="text-purple-500" /> },
+  ];
+
   return (
-    <section id="skills" className="py-20 px-6 bg-gray-50 max-w-5xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-8">My Skills</h2>
-      <div className="space-y-4">
-        {skills.map((skill, index) => (
-          <div key={index}>
-            <div className="flex justify-between mb-1">
-              <span className="text-lg font-medium">{skill.name}</span>
-              <span className="text-lg font-medium">{skill.level}%</span>
+    <section
+      id="skills"
+      className="py-20 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white"
+    >
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-12">Skills</h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-2xl shadow-md p-6 w-32 sm:w-40 hover:scale-105 hover:shadow-xl transition"
+            >
+              <div className="text-4xl mb-3">{skill.icon}</div>
+              <p className="font-semibold text-base sm:text-lg">
+                {skill.name}
+              </p>
             </div>
-            <div className="w-full bg-gray-200 h-4 rounded-full">
-              <div
-                className="bg-blue-600 h-4 rounded-full transition-all duration-1000"
-                style={{ width: `${skill.level}%` }}
-              ></div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

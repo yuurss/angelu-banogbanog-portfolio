@@ -1,8 +1,8 @@
 import React from "react";
 
 const education = [
-  { degree: "BS Information Technology", school: "Your University", year: "2023-Present" },
-  { degree: "High School Diploma", school: "Your High School", year: "2017-2021" }
+  { degree: "BS Information Technology", school: "Cebu Technologiacl University", year: "2026 Graduated" },
+  { degree: "Senior High School Diploma", school: "LNHS-Extension Don Bosco Campus", year: "2019-2021" }
 ];
 
 const Education = () => {
