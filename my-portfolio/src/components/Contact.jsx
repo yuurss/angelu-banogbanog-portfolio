@@ -7,12 +7,10 @@ const Contact = () => {
     e.preventDefault();
     const form = e.target;
 
-    fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    fetch("https://formspree.io/f/xwprwywd", {
       method: "POST",
       body: new FormData(form),
-      headers: {
-        Accept: "application/json",
-      },
+      headers: { Accept: "application/json" },
     }).then((response) => {
       if (response.ok) {
         setSubmitted(true);
@@ -24,63 +22,63 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 max-w-3xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-8">Contact Me</h2>
+    <section id="contact" className="py-20 px-4 sm:px-6 max-w-5xl mx-auto bg-white">
+      <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-center mb-12 text-indigo-600">
+        Contact Me
+      </h2>
 
-      <div className="text-center mb-6">
-        <p>
-          Email:{" "}
-          <a
-            href="mailto:angelunabanogbanog14@gmail.com"
-            className="text-blue-600 hover:underline"
-          >
-            angelunabanogbanog14@gmail.com
-          </a>
-        </p>
-        <p>
-          Phone:{" "}
-          <a href="tel:09672471918" className="text-blue-600 hover:underline">
-            09672471918
-          </a>
-        </p>
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Left Column - Labels and Info */}
+        <div className="md:w-1/3 flex flex-col gap-4">
+          <div>
+            <h3 className="font-semibold text-gray-700">Email</h3>
+            <p className="text-teal-500">angelunabanogbanog14@gmail.com</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-700">Phone</h3>
+            <p className="text-teal-500">09672471918</p>
+          </div>
+        </div>
+
+        {/* Right Column - Form */}
+        <div className="md:w-2/3">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="flex-1 p-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                className="flex-1 p-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              className="p-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              rows="5"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-indigo-500 text-white p-3 rounded-xl font-semibold hover:bg-teal-400 transition"
+            >
+              Send Message
+            </button>
+          </form>
+
+          {submitted && (
+            <p className="text-green-500 mt-4 text-center">Message sent successfully!</p>
+          )}
+        </div>
       </div>
-
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            className="p-3 border rounded"
-            required
-        />
-        <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            className="p-3 border rounded"
-            required
-        />
-        <textarea
-            name="message"
-            placeholder="Your Message"
-            className="p-3 border rounded"
-            rows="5"
-            required
-        ></textarea>
-
-        {/* <-- Replace your old button with this one */}
-        <button
-            type="submit"
-            className="bg-blue-600 text-white p-3 rounded font-semibold hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
-        >
-            Send Message
-        </button>
-        </form>
-      {submitted && (
-        <p className="text-green-500 mt-4 text-center">
-          Message sent successfully!
-        </p>
-      )}
     </section>
   );
 };

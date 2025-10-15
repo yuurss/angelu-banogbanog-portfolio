@@ -8,16 +8,18 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50">
-      <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
-      <div className="grid md:grid-cols-3 gap-8">
+    <section id="projects" className="py-20 px-4 sm:px-6 max-w-6xl mx-auto bg-gray-50">
+      <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-center mb-12 text-indigo-600">
+        My Projects
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         {projects.map((project) => (
-          <div key={project.title} className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-            <p className="mb-4">{project.description}</p>
+          <div key={project.title} className="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+            <h3 className="text-2xl font-semibold mb-2 text-indigo-600">{project.title}</h3>
+            <p className="mb-4 text-gray-700">{project.description}</p>
             <a
               href={project.link}
-              className="text-blue-600 font-semibold hover:underline"
+              className="text-teal-500 font-semibold hover:underline"
               target="_blank"
             >
               View Project
