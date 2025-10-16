@@ -3,7 +3,7 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main  # 👈 change if your main branch has a different name
+      - gh-pages  # 👈 change if your main branch has a different name
 
 permissions:
   contents: read
