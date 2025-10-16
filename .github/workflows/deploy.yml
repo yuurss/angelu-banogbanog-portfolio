@@ -3,7 +3,7 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main  # 👈 or use the name of your main branch (often 'main' or 'master')
+      - main  # 👈 change if your main branch has a different name
 
 permissions:
   contents: read
@@ -32,8 +32,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # 👈 this folder is what will be deployed
-
+          path: dist  # 👈 Vite outputs to /dist
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
