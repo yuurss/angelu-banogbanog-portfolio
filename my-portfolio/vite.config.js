@@ -8,17 +8,9 @@ export default defineConfig({
     tailwindcss(),
     react(),
     vitePluginSitemap({
-      hostname: 'https://yuurss.github.io/angelu-banogbanog-portfolio', // 👈 correct site URL
-      outDir: 'dist',
-      changefreq: 'daily',
-      priority: 1.0,
-      urls: [
-        { url: '/', changefreq: 'daily', priority: 1.0 },
-        { url: '/about', changefreq: 'weekly', priority: 0.8 },
-        { url: '/projects', changefreq: 'weekly', priority: 0.8 },
-        { url: '/contact', changefreq: 'monthly', priority: 0.7 },
-      ],
-    }),
+      hostname: 'https://yuurss.github.io/angelu-banogbanog-portfolio',
+      outDir: 'dist'
+    })
   ],
   base: '/angelu-banogbanog-portfolio/',
 })
