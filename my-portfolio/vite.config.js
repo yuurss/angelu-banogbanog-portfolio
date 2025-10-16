@@ -8,7 +8,7 @@ export default defineConfig({
     tailwindcss(),
     react(),
     vitePluginSitemap({
-      hostname: 'https://angelubanogbanog.github.io/angelu-banogbanog-portfolio', // your live site
+      hostname: 'https://yuurss.github.io/angelu-banogbanog-portfolio', // your live site
       outDir: 'dist',
     }),
   ],
