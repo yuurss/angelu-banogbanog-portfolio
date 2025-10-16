@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yuurss.github.io/angelu-banogbanog-portfolio/sitemap.xml
