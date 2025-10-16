@@ -1,16 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import vitePluginSitemap from 'vite-plugin-sitemap'
 
+// ✅ Clean and working config (no sitemap plugin)
 export default defineConfig({
   plugins: [
     tailwindcss(),
     react(),
-    vitePluginSitemap({
-      hostname: 'https://yuurss.github.io/angelu-banogbanog-portfolio',
-      outDir: 'dist'
-    })
   ],
-  base: '/angelu-banogbanog-portfolio/',
+  base: '/angelu-banogbanog-portfolio/', // ✅ required for GitHub Pages
 })
