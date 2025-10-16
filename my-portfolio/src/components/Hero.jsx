@@ -2,6 +2,21 @@ import React from "react";
 import profileImage from "../assets/images/profile.jpg";
 
 const Hero = () => {
+          const downloadResume = () => {
+          fetch('/angelu-banogbanog-portfolio/resume.pdf')
+            .then(response => response.blob()) 
+            .then(blob => {
+              const url = window.URL.createObjectURL(blob) 
+              const a = document.createElement('a')       
+              a.href = url
+              a.download = 'Angelu_Banogbanog_Resume.pdf'
+              document.body.appendChild(a)
+              a.click()                               
+              a.remove()                                 
+              window.URL.revokeObjectURL(url)             
+              alert('Download has started!')  
+            })
+        }
   return (
     <section
       id="hero"
@@ -34,13 +49,13 @@ const Hero = () => {
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <a
-          href="/angelu-banogbanog-portfolio/resume.pdf" // 👈 Make sure your resume file is placed in the 'public' folder
-          download="Angelu_Banogbanog_Resume.pdf"
-          className="px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-400 transition"
-        >
-          Download Resume
-        </a>
+        <button
+            onClick={downloadResume}
+            className="px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-400 transition"
+          >
+            Download Resume
+        </button>
+
       </div>
     </section>
   );
