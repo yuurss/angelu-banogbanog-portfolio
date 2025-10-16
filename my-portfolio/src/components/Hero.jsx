@@ -35,7 +35,7 @@ const Hero = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4">
         <a
-          href="/resume.pdf" // 👈 Make sure your resume file is placed in the 'public' folder
+          href="/angelu-banogbanog-portfolio/resume.pdf" // 👈 Make sure your resume file is placed in the 'public' folder
           download="Angelu_Banogbanog_Resume.pdf"
           className="px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-400 transition"
         >
