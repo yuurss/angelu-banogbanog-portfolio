@@ -8,15 +8,7 @@ import {
   FaCss3Alt,
   FaGitAlt,
 } from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiJavascript,
-  SiTypescript,
-  SiMysql,
-  SiExpress,
-  SiGithub,
-  SiVite,
-} from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiTypescript } from "react-icons/si";
 
 const Skills = () => {
   const skills = [
@@ -25,15 +17,11 @@ const Skills = () => {
     { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
     { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
     { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-    { name: "Express.js", icon: <SiExpress className="text-gray-500" /> },
     { name: "PHP", icon: <FaPhp className="text-indigo-500" /> },
-    { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
     { name: "Java", icon: <FaJava className="text-red-500" /> },
     { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
     { name: "CSS", icon: <FaCss3Alt className="text-blue-400" /> },
     { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
-    { name: "GitHub", icon: <SiGithub className="text-black" /> },
-    { name: "Vite", icon: <SiVite className="text-purple-500" /> },
   ];
 
   return (
@@ -44,16 +32,14 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-12">Skills</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-2xl shadow-md p-6 w-32 sm:w-40 hover:scale-105 hover:shadow-xl transition"
+              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-xl shadow-md p-4 w-28 sm:w-32 md:w-36"
             >
-              <div className="text-4xl mb-3">{skill.icon}</div>
-              <p className="font-semibold text-base sm:text-lg">
-                {skill.name}
-              </p>
+              <div className="text-3xl mb-2">{skill.icon}</div>
+              <p className="font-semibold text-sm sm:text-base">{skill.name}</p>
             </div>
           ))}
         </div>
