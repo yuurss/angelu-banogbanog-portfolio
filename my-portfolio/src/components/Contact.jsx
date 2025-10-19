@@ -1,83 +1,76 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-
-    fetch("https://formspree.io/f/xwprwywd", {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" },
-    }).then((response) => {
-      if (response.ok) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        alert("Oops! There was a problem submitting your form.");
-      }
-    });
-  };
-
   return (
-    <section id="contact" className="py-20 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white">
-      <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-center mb-12 text-indigo-600">
-        Contact Me
-      </h2>
+    <section
+      id="contact"
+      className="py-20 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white"
+    >
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
+        <p className="text-lg mb-10">
+          I’d love to hear from you! Whether it’s about a project, collaboration, or just to say hello —
+          drop me a message below.
+        </p>
 
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Left Column - Labels and Info */}
-        <div className="md:w-1/3 flex flex-col gap-4">
+        <form
+          action="https://formspree.io/f/your-form-id" // Replace with your Formspree ID
+          method="POST"
+          className="space-y-6"
+        >
+          {/* Name Input */}
           <div>
-            <h3 className="font-semibold text-gray-700">Email</h3>
-            <p className="text-teal-500">angelunabanogbanog14@gmail.com</p>
+            <label htmlFor="name" className="block text-left text-white font-medium mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              className="w-full p-3 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              placeholder="Enter your name"
+            />
           </div>
-          <div>
-            <h3 className="font-semibold text-gray-700">Phone</h3>
-            <p className="text-teal-500">09672471918</p>
-          </div>
-        </div>
 
-        {/* Right Column - Form */}
-        <div className="md:w-2/3">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="flex-1 p-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                className="flex-1 p-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                required
-              />
-            </div>
+          {/* Email Input */}
+          <div>
+            <label htmlFor="email" className="block text-left text-white font-medium mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              className="w-full p-3 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          {/* Message Textarea */}
+          <div>
+            <label htmlFor="message" className="block text-left text-white font-medium mb-2">
+              Message
+            </label>
             <textarea
               name="message"
-              placeholder="Your Message"
-              className="p-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              id="message"
               rows="5"
               required
-            />
-            <button
-              type="submit"
-              className="bg-indigo-500 text-white p-3 rounded-xl font-semibold hover:bg-teal-400 transition"
-            >
-              Send Message
-            </button>
-          </form>
+              className="w-full p-3 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none"
+              placeholder="Write your message here..."
+            ></textarea>
+          </div>
 
-          {submitted && (
-            <p className="text-green-500 mt-4 text-center">Message sent successfully!</p>
-          )}
-        </div>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="px-8 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-400 transition"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
     </section>
   );
