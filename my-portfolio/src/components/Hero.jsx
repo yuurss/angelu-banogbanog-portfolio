@@ -20,7 +20,7 @@ const Hero = () => {
   return (
         <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-500 to-teal-400 text-white pt-24 px-4 pb-8 sm:pt-28 sm:pb-12"
+      className="min-h-[60vh] flex flex-col justify-center items-center bg-gradient-to-r from-indigo-500 to-teal-400 text-white py-20 px-4"
 
     >
       {/* Profile Image */}
