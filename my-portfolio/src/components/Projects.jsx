@@ -1,5 +1,5 @@
 import React from "react";
-import { FaDesktop, FaReact, FaPhp, FaNodeJs, FaDatabase, FaJsSquare } from "react-icons/fa";
+import { FaReact, FaPhp, FaNodeJs, FaJsSquare } from "react-icons/fa";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
 import portfolioImg from "../assets/images/project1.jpg";
 import ecommerceImg from "../assets/images/project2.jpg";
@@ -43,14 +43,16 @@ const Projects = () => {
       id="projects"
       className="py-12 sm:py-0 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-12">Projects</h2>
+      <div className="max-w-5xl mx-auto text-center sm:text-left">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+          Projects
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center sm:justify-items-start">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white text-gray-800 rounded-2xl shadow-md overflow-hidden w-72"
+              className="bg-white text-gray-800 rounded-2xl shadow-md overflow-hidden w-full sm:w-[90%] md:w-[95%] max-w-sm"
             >
               <div className="relative bg-gray-200 p-4 flex justify-center">
                 <img
@@ -59,9 +61,9 @@ const Projects = () => {
                   className="rounded-lg w-full h-40 object-cover"
                 />
               </div>
-              <div className="p-4 text-center">
+              <div className="p-5 text-center sm:text-left">
                 <h3 className="font-bold text-lg mb-3">{project.title}</h3>
-                <div className="flex justify-center flex-wrap gap-2">
+                <div className="flex justify-center sm:justify-start flex-wrap gap-3">
                   {project.languages.map((lang, i) => (
                     <div key={i} className="flex items-center gap-1 text-sm">
                       {lang.icon}

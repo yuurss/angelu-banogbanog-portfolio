@@ -3,3 +3,9 @@ section {
   margin-bottom: 0;
   padding-bottom: 4rem;
 }
+
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+

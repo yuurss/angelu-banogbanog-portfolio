@@ -28,14 +28,14 @@ const Skills = () => {
       id="skills"
       className="py-12 sm:py-0 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-12">Skills</h2>
+      <div className="max-w-5xl mx-auto text-center sm:text-left">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-8">Skills</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-xl shadow-md p-4 w-18 sm:w-22 md:w-24"
+              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-xl shadow-md p-4 w-24 sm:w-22 md:w-24"
             >
               <div className="text-3xl mb-2">{skill.icon}</div>
               <p className="font-semibold text-sm sm:text-base">{skill.name}</p>

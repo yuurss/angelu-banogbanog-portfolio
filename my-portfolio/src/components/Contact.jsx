@@ -31,8 +31,8 @@ const Contact = () => {
     >
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
-        <p className="text-lg mb-10">
-          I’d love to hear from you! Whether it’s about a project, collaboration, or just to say hello — drop me a message below.
+        <p className="text-base sm:text-lg leading-relaxed text-justify sm:text-left">
+          I’d love to hear from you! Whether it’s about a project, collaboration, or just to say hello or drop me a message below.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
