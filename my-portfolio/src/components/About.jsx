@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white"
+      className="py-12 sm:py-0 px-6 bg-gradient-to-r from-indigo-500 to-teal-400 text-white"
     >
       <div className="max-w-5xl mx-auto text-center sm:text-left">
         <h2 className="text-3xl sm:text-4xl font-bold mb-8">About Me</h2>
@@ -18,9 +18,9 @@ const About = () => {
         </p>
 
         <p className="mt-6 text-base sm:text-lg leading-relaxed text-justify sm:text-left">
-          When I’m not coding, I enjoy learning new tools, improving my skills, and
-          exploring ways to make websites more interactive and accessible for all
-          users.
+          Beyond coding, I continuously explore innovative tools and workflows to enhance productivity and creativity.
+           I also integrate emerging technologies like AI-powered solutions (such as GPT) to support development efficiency,
+            streamline ideas, and deliver smarter, more dynamic web experiences.
         </p>
       </div>
     </section>
