@@ -35,7 +35,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-xl shadow-md p-4 w-24 sm:w-30 md:w-32"
+              className="flex flex-col items-center justify-center bg-white text-gray-800 rounded-xl shadow-md p-4 w-18 sm:w-22 md:w-24"
             >
               <div className="text-3xl mb-2">{skill.icon}</div>
               <p className="font-semibold text-sm sm:text-base">{skill.name}</p>

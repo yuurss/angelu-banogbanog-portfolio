@@ -1,5 +1,6 @@
 import React from "react";
-import { FaDesktop } from "react-icons/fa";
+import { FaDesktop, FaReact, FaPhp, FaNodeJs, FaDatabase, FaJsSquare } from "react-icons/fa";
+import { SiTailwindcss, SiMysql } from "react-icons/si";
 import portfolioImg from "../assets/images/project1.jpg";
 import ecommerceImg from "../assets/images/project2.jpg";
 import timelineImg from "../assets/images/project3.jpg";
@@ -9,17 +10,31 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       image: portfolioImg,
-      languages: "React, Tailwind CSS, JavaScript",
+      languages: [
+        { name: "React", icon: <FaReact className="text-sky-500" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
+      ],
     },
     {
-      title: "E-Commerce Website",
+      title: "Hurb E-Commerce Website",
       image: ecommerceImg,
-      languages: "React, PHP, Node.js, Tailwind CSS, MySQL",
+      languages: [
+        { name: "React", icon: <FaReact className="text-sky-500" /> },
+        { name: "PHP", icon: <FaPhp className="text-indigo-500" /> },
+        { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+        { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
+      ],
     },
     {
-      title: "Timeline Project",
+      title: "Memory Timeline Website",
       image: timelineImg,
-      languages: "HTML, CSS, JavaScript",
+      languages: [
+        { name: "React", icon: <FaReact className="text-sky-500" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
+      ],
     },
   ];
 
@@ -38,7 +53,6 @@ const Projects = () => {
               className="bg-white text-gray-800 rounded-2xl shadow-md overflow-hidden w-72"
             >
               <div className="relative bg-gray-200 p-4 flex justify-center">
-                <FaDesktop className="text-4xl text-indigo-500 absolute top-3 left-3" />
                 <img
                   src={project.image}
                   alt={project.title}
@@ -46,8 +60,15 @@ const Projects = () => {
                 />
               </div>
               <div className="p-4 text-center">
-                <h3 className="font-bold text-lg mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-700">{project.languages}</p>
+                <h3 className="font-bold text-lg mb-3">{project.title}</h3>
+                <div className="flex justify-center flex-wrap gap-2">
+                  {project.languages.map((lang, i) => (
+                    <div key={i} className="flex items-center gap-1 text-sm">
+                      {lang.icon}
+                      <span className="text-gray-700">{lang.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
